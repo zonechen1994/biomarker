@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 更科技感的蓝色主题 */
+  --primary-50: #e6f7ff;
+  --primary-100: #bae7ff;
+  --primary-200: #91d5ff;
+  --primary-300: #69c0ff;
+  --primary-400: #40a9ff;
+  --primary-500: #1890ff;
+  --primary-600: #096dd9;
+  --primary-700: #0050b3;
+  --primary-800: #003a8c;
+  --primary-900: #002766;
+  --primary-950: #001a4d;
+  
+  /* 辅助色 - 科技紫 */
+  --accent-50: #f5f0ff;
+  --accent-100: #ede0ff;
+  --accent-200: #d6bfff;
+  --accent-300: #b794f6;
+  --accent-400: #9965f4;
+  --accent-500: #7c3aed;
+  --accent-600: #6d28d9;
+  --accent-700: #5b21b6;
+  --accent-800: #4c1d95;
+  --accent-900: #3c1a79;
+  
+  /* 辅助色 - 科技青 */
+  --cyan-50: #ecfdff;
+  --cyan-100: #cff9fe;
+  --cyan-200: #a5f0fc;
+  --cyan-300: #67e3f9;
+  --cyan-400: #22ccee;
+  --cyan-500: #06b6d4;
+  --cyan-600: #0891b2;
+  --cyan-700: #0e7490;
+  --cyan-800: #155e75;
+  --cyan-900: #164e63;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900 bg-white;
+  }
+  
+  /* 科技感滚动条 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-400 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+  
+  .text-muted {
+    @apply text-gray-600;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg border border-gray-100 backdrop-blur-sm;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply bg-white text-primary-700 border border-primary-300 hover:bg-primary-50;
+  }
+  
+  .btn-accent {
+    @apply bg-accent-600 text-white hover:bg-accent-700 focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 shadow-md hover:shadow-lg;
+  }
+  
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600;
+  }
+  
+  .gradient-border {
+    @apply border-2 border-transparent bg-clip-border;
+    background-image: linear-gradient(white, white), linear-gradient(to right, var(--primary-500), var(--accent-500));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  
+  .bg-background {
+    @apply bg-gray-50;
+  }
+  
+  .bg-foreground {
+    @apply bg-gray-900;
+  }
+  
+  .text-primary {
+    @apply text-primary-600;
+  }
+  
+  .text-success {
+    @apply text-green-600;
+  }
+  
+  .bg-primary\/10 {
+    @apply bg-primary-100;
+  }
+  
+  .bg-secondary\/20 {
+    @apply bg-blue-100;
+  }
+  
+  .bg-primary\/20 {
+    @apply bg-primary-100;
+  }
+  
+  .bg-success\/20 {
+    @apply bg-green-100;
+  }
+  
+  /* 科技感卡片 */
+  .tech-card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-100 p-6 relative overflow-hidden transition-all duration-300;
+  }
+  
+  /* 发光效果 */
+  .tech-card.glow {
+    @apply hover:shadow-lg hover:border-primary-100;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .tech-card.glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .tech-card.glow:hover::before {
+    opacity: 1;
+  }
+  
+  /* 科技网格背景 */
+  .bg-tech-grid {
+    background-color: #f9fafb;
+    background-image: 
+      linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  /* 科技图标 */
+  .tech-icon {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600;
+  }
+  
+  /* 发光阴影 */
+  .shadow-glow {
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+  }
+  
+  /* 浮动动画 */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  /* 慢速脉冲动画 */
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* 慢速旋转动画 */
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+  
+  /* 反向慢速旋转动画 */
+  @keyframes reverse-spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+  }
+  
+  .animate-reverse-spin-slow {
+    animation: reverse-spin-slow 15s linear infinite;
+  }
+} 
