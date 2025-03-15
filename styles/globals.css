@@ -245,4 +245,111 @@
   .animate-reverse-spin-slow {
     animation: reverse-spin-slow 15s linear infinite;
   }
+  
+  /* 数据流动动画 */
+  @keyframes flowVertical {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(110px); opacity: 0; }
+  }
+  
+  @keyframes flowRight {
+    0% { transform: translate(0, 0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(-90px, -50px); opacity: 0; }
+  }
+  
+  @keyframes flowLeft {
+    0% { transform: translate(0, 0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(90px, -50px); opacity: 0; }
+  }
+  
+  .animate-dataflow-vertical {
+    animation: flowVertical 3s infinite;
+  }
+  
+  .animate-dataflow-right {
+    animation: flowRight 3s infinite;
+    animation-delay: 1s;
+  }
+  
+  .animate-dataflow-left {
+    animation: flowLeft 3s infinite;
+    animation-delay: 2s;
+  }
+  
+  @keyframes spin-very-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes reverse-spin-very-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  .animate-spin-very-slow {
+    animation: spin-very-slow 60s linear infinite;
+  }
+  
+  .animate-reverse-spin-very-slow {
+    animation: reverse-spin-very-slow 80s linear infinite;
+  }
+  
+  @keyframes micro-spin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(0.5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-0.5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  @keyframes micro-reverse-spin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-0.5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(0.5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .animate-micro-spin {
+    animation: micro-spin 20s ease-in-out infinite;
+  }
+  
+  .animate-micro-reverse-spin {
+    animation: micro-reverse-spin 30s ease-in-out infinite;
+  }
+  
+  @keyframes light-spin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  @keyframes light-reverse-spin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .animate-light-spin {
+    animation: light-spin 15s ease-in-out infinite;
+  }
+  
+  .animate-light-reverse-spin {
+    animation: light-reverse-spin 18s ease-in-out infinite;
+  }
 } 

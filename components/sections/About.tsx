@@ -1,11 +1,14 @@
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import { FiCheck } from "react-icons/fi";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [ref, isInView] = useInView({ 
+    triggerOnce: true,
+    rootMargin: "-100px"
+  });
 
   const achievements = [
     "病理AI诊断准确率达到96.8%，超过人类专家平均水平",

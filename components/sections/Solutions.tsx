@@ -203,57 +203,15 @@ const Solutions = () => {
               </div>
               
               <div className="relative h-[300px] lg:h-auto overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 to-accent-900/90 mix-blend-multiply"></div>
-                <div className="absolute inset-0">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={solutions[activeTab].image}
-                      alt={solutions[activeTab].title}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
-                </div>
-                
-                {/* 装饰元素 */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[80%] h-[80%] border-2 border-dashed border-white/30 rounded-full animate-spin-slow"></div>
-                </div>
-                
-                {/* 数据可视化装饰 */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-between text-white">
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 bg-white rounded-full mr-2 animate-pulse"></div>
-                      <div className="text-sm font-medium">AI分析进行中</div>
-                    </div>
-                    <div className="text-sm opacity-70">模型版本: v3.2.1</div>
-                  </div>
-                  
-                  <div>
-                    <div className="mb-2 flex justify-between items-center">
-                      <div className="text-sm">数据处理进度</div>
-                      <div className="text-sm">100%</div>
-                    </div>
-                    <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
-                      <motion.div 
-                        className="h-full gradient-bg"
-                        initial={{ width: 0 }}
-                        animate={{ width: "100%" }}
-                        transition={{ duration: 2 }}
-                      ></motion.div>
-                    </div>
-                    
-                    <div className="mt-6 grid grid-cols-2 gap-4">
-                      <div className="border border-white/20 rounded p-2">
-                        <div className="text-xs opacity-70">准确率</div>
-                        <div className="text-lg font-medium">98.7%</div>
-                      </div>
-                      <div className="border border-white/20 rounded p-2">
-                        <div className="text-xs opacity-70">处理时间</div>
-                        <div className="text-lg font-medium">1.2s</div>
-                      </div>
-                    </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 to-accent-900/90"></div>
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="text-center text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                      {solutions[activeTab].title}
+                    </h3>
+                    <p className="text-white/80 text-lg mb-6">
+                      {solutions[activeTab].description}
+                    </p>
                   </div>
                 </div>
               </div>
